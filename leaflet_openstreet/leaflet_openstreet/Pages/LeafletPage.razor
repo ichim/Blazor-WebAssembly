@@ -1,0 +1,30 @@
+﻿@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+@page "/map"
+<h3>Blazor Map with Leaflet and OpenStreetMap</h3>
+<div id ="map" style = "width:600px; height:400px;"></div>
+@code {
+    private IJSObjectReference? module;
+    private string? result;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var client = new HttpClient();
+            var raw = await client.GetStringAsync("http://localhost:5262/geojson.json");
+            raw = raw.Replace('\n', ' ');
+            module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./leafletmap.js");
+            if(module != null)
+            {
+                result = await module.InvokeAsync<string>("load_map", Convert.ToString(raw));
+            }
+        }
+    }
+        async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}
