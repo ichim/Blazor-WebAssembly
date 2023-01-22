@@ -1,0 +1,27 @@
+﻿@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+@page "/sheets"
+<h3>working with JSpreadsheet</h3>
+<div id="spreadsheet"></div>
+@code {
+    private IJSObjectReference? module;
+    private string? result;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./jspreadsheet.js");
+            if(module != null)
+            {
+                result = await module.InvokeAsync<string>("load_spreadsheet");
+            }
+        }
+    }
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}
