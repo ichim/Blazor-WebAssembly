@@ -1,2 +1,2 @@
-# Blazor2
+# Blazor
  
