@@ -1,0 +1,31 @@
+﻿@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+@page "/sheets"
+<h3>working with JSpreadsheet and Bing Map</h3>
+<div id="spreadsheet"></div>
+<div id="map" style="height:400px;width:580px; position: relative;"></div>
+@code {
+    private IJSObjectReference? module;
+    private string? result;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var client = new HttpClient();
+            var raw = await client.GetStringAsync("http://localhost:5245/inputfile.csv");
+            module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./jspreadsheet.js");
+            if(module != null)
+            {
+                result = await module.InvokeAsync<string>("load_spreadsheet", Convert.ToString(raw));
+                var result_map = await module.InvokeAsync<string>("load_map");
+            }
+        }
+    }
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}
