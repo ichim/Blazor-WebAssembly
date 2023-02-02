@@ -1,2 +1,9 @@
-# Blazor2
- 
+# Blazor
+## WebAssembly projects
+1. leaflet_openstreet with **Leaflet API** and OpenStreetMap basemap
+
+https://youtu.be/NOUWCxgs-oU
+
+2. spreadsheet with **JSpreadsheet API**
+
+https://youtu.be/ADDqMwKSk4E
