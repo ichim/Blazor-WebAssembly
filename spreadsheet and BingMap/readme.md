@@ -7,7 +7,7 @@ You will need a Bing Map account and a JSpreadsheet account
 
 ## Scripts and Cascade Style Sheets references
 
-./wwwroot/index.html
+You must copy the following into ./wwwroot/index.html
 
 ### For Jspreadsheet
 
