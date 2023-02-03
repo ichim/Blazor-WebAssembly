@@ -10,7 +10,7 @@ For JSpreadsheet, you can get your License Code from here:
 https://jspreadsheet.com/me/profile
 
 
-## Scripts and __Cascade Style Sheets__ references
+## Scripts and Cascade Style Sheets references
 
 You must copy the following into ./wwwroot/index.html (wwwroot of webassembly project):
 
