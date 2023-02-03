@@ -10,4 +10,8 @@ https://youtu.be/ADDqMwKSk4E
 
 3. spreadsheet and Bing Map. Interaction between Spreadseet and Bing Map
 
+https://youtu.be/wH5bBRxZk8A
+
+
+
 
