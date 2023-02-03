@@ -3,7 +3,12 @@
 
 ## Prerequests
 
-You will need a Bing Map account and a JSpreadsheet account
+You will need a Bing Map account and a JSpreadsheet account.
+
+--For JSpreadsheet, you can get your License Code from here:
+
+https://jspreadsheet.com/me/profile
+
 
 ## Scripts and Cascade Style Sheets references
 
