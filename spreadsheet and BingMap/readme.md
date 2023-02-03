@@ -20,4 +20,5 @@ You will need a Bing Map account and a JSpreadsheet account
     
 ### For Bing Map
 
-<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your bing ky code]' async defer></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your bing ky code]' async defer></script>
+    
