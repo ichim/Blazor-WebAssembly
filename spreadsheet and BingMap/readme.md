@@ -52,3 +52,8 @@ The interaction of the spreadsheet with the map is done through the context menu
                         })
                 }
             })
+
+For more information, you can watch:
+
+    https://youtu.be/wH5bBRxZk8A
+
