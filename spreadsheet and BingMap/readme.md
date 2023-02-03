@@ -12,9 +12,9 @@ https://jspreadsheet.com/me/profile
 
 ## Scripts and Cascade Style Sheets references
 
-You must copy the following into ./wwwroot/index.html:
+You must copy the following into ./wwwroot/index.html (wwwroot of webassembly project):
 
-#### For Jspreadsheet
+#### Reference for Jspreadsheet
 
 cascade style sheets:
 
@@ -27,7 +27,7 @@ scripts:
     <script src="https://jspreadsheet.com/v9/jspreadsheet.js"></script>
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     
-#### For Bing Map
+#### Reference for Bing Map
 
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your bing ky code]' async defer></script>
     
