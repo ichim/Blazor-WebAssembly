@@ -37,3 +37,18 @@ scripts:
 
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your bing ky code]' async defer></script>
     
+The interaction of the spreadsheet with the map is done through the context menu:
+
+    contextMenu: function (o, x, y, e, items, section) {
+            items.push({
+                title: 'Go To',
+                onclick: function () {
+                    let longitude = parseFloat(o.getCell(0, y).innerHTML);
+                    let latitude = parseFloat(o.getCell(1, y).innerHTML);
+                    if (map !== null)
+                        map.setView({
+                            center: new Microsoft.Maps.Location(latitude, longitude),
+                            zoom: 10
+                        })
+                }
+            })
