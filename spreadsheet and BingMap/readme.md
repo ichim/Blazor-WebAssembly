@@ -11,10 +11,14 @@ You must copy the following into ./wwwroot/index.html:
 
 #### For Jspreadsheet
 
+cascade style sheets:
+
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
     <link rel="stylesheet" href="https://jspreadsheet.com/v9/jspreadsheet.css" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
-    
+
+scripts:
+
     <script src="https://jspreadsheet.com/v9/jspreadsheet.js"></script>
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     
