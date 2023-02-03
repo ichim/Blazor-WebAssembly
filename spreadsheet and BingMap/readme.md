@@ -10,11 +10,11 @@ For JSpreadsheet, you can get your License Code from here:
 https://jspreadsheet.com/me/profile
 
 
-## Scripts and _Cascade Style Sheets references_
+## Scripts and _Cascade Style Sheets_ references
 
 You must copy the following into ./wwwroot/index.html (wwwroot of webassembly project):
 
-#### Reference for Jspreadsheet
+- Reference for Jspreadsheet
 
 cascade style sheets:
 
@@ -27,7 +27,7 @@ scripts:
     <script src="https://jspreadsheet.com/v9/jspreadsheet.js"></script>
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     
-#### Reference for Bing Map
+- Reference for Bing Map
 
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[your bing ky code]' async defer></script>
     
