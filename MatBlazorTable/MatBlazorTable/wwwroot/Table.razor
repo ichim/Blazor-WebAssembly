@@ -1,0 +1,74 @@
+﻿@page "/table"
+<h3>Table with MatBlazor</h3>
+<MatTable Items="@points.ToArray()" 
+Id="customcsstable" 
+AllowSelection="false" 
+SelectionChanged="SelectionChangeEvent"
+PageSize="1000"
+PageLabel = "page number:"
+ShowPaging="false"
+>
+    <MatTableHeader>
+        <th>Number</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>City</th>
+        <th>Date</th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.number</td>
+        <td>@context.latitude</td>
+        <td>@context.longitude</td>
+        <td>@context.city</td>
+        <td>@context.date</td>
+    </MatTableRow>
+</MatTable>
+<p>@selection</p>
+@code {
+    List<Point> points = new List<Point>();
+    protected override async Task OnInitializedAsync()
+    {
+        var client = new HttpClient();
+        var raw = await client.GetStringAsync("http://localhost:5101/inputfile.csv");
+        int step = 0;
+        foreach(var row in raw.Split("\r\n"))
+        {
+            var parameters = new List<string>();
+            parameters.Add(step.ToString());
+            foreach (var item in row.Split(", "))
+                parameters.Add(item);
+            points.Add(new Point(parameters.ToArray()));
+            step++;
+        }
+    }
+
+
+    public class Point
+    {
+        public int number { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+        public string city { get; set; }
+        public string date { get; set; }
+
+        public Point(params string[] parameters)
+        {
+            number = Convert.ToInt16(parameters[0]);
+            latitude = Convert.ToDouble(parameters[1]);
+            longitude = Convert.ToDouble(parameters[2]);
+            city = Convert.ToString(parameters[3]);
+            date = Convert.ToString(parameters[4]);
+        }
+    }
+
+    private string selection = "";
+    public void SelectionChangeEvent(object row)
+    {
+        if (row != null)
+            selection = ((Point)row).city;
+        else
+            selection = "";
+
+        this.StateHasChanged();
+    }
+}
