@@ -17,7 +17,7 @@ or
  
        @using MatBlazor
        
-Add external reference (CSS and JavaScript)
+Add external reference (CSS and JavaScript) into index.html file:
 
 1. for css:
 
