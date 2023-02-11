@@ -25,6 +25,6 @@ Add external reference (CSS and JavaScript) into index.html file:
        
 2. for JavaScript
 
-    <script src="_content/MatBlazor/dist/matBlazor.js"></script>
+        <script src="_content/MatBlazor/dist/matBlazor.js"></script>
        
 
